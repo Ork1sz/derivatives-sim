@@ -17,7 +17,7 @@ def euler_discretization(S0, r, sigma, T, dt, rng):
     times = np.linspace(0, T, N+1)
     S = {times[0]: S0}
     
-    for t in range(1, N):
+    for t in range(1, N+1):
         error = rng.standard_normal()  # generate standard normal random variables
         S[times[t]] = S[times[t-1]] *(1 + r * dt + sigma * np.sqrt(dt) * error)
     return S
